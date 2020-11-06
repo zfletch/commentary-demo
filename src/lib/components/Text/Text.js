@@ -32,7 +32,7 @@ const wordToSpan = (config, active, toggleActive, word) => {
         onClick={onClick}
         onKeyDown={onKeyDown}
         className={className}
-        style={{ color }}
+        style={{ color, paddingRight: '2px', fontWeight: '450' }}
       >
         {form}
       </span>
