@@ -27,8 +27,8 @@
     "test": "node scripts/test.js",
     "lint": "eslint --ext=js --ext=jsx ."
   },
-  "license": "MIT",
   "dependencies": {
+    "bootstrap": "^4.5.3",
     "d3": "^6.2.0",
     "dagre-d3": "^0.6.4",
     "prop-types": "^15.7.2",
