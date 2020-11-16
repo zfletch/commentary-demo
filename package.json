@@ -1,14 +1,14 @@
 {
-  "name": "treebank-react",
+  "name": "commentary-demo",
   "version": "0.0.6",
   "description": "Treebank display engine for React",
-  "homepage": "https://perseids-tools.github.io/treebank-react/",
+  "homepage": "https://perseids-tools.github.io/commentary-demo/",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/perseids-tools/treebank-react.git"
+    "url": "git+https://github.com/perseids-tools/commentary-demo.git"
   },
   "bugs": {
-    "url": "https://github.com/perseids-tools/treebank-react/issues"
+    "url": "https://github.com/perseids-tools/commentary-demo/issues"
   },
   "license": "MIT",
   "keywords": [
