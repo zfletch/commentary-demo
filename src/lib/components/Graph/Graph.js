@@ -55,9 +55,9 @@ const Graph = ({
   const { nodes, links } = sentenceToGraph(sentence);
 
   // TODO - consider how active could be controlled from the container
-  useEffect(() => {
-    toggleActive(null);
-  }, [sentence]);
+  // useEffect(() => {
+  //   toggleActive(null);
+  // }, [sentence]);
 
   return (
     <DagreWrapper

@@ -11,11 +11,22 @@ const sentenceFromJson = (json, id) => (
 );
 
 const Sentence = ({ children, id }) => {
-  const [active, setActive] = useState(null);
+  const [active, setActive] = useState({
+    $: {
+      cite: 'urn:cts:greekLit:tlg0012.tlg001:1.1',
+      form: 'μῆνιν',
+      gloss: 'wrath, anger',
+      head: '2',
+      id: '1',
+      lemma: 'μῆνις',
+      postag: 'n-s---fa-',
+      relation: 'OBJ',
+    },
+  });
 
   const toggleActive = (word) => {
     if (word && active && word.$.id === active.$.id) {
-      setActive(null);
+      // setActive(null);
     } else {
       setActive(word);
     }

@@ -35,11 +35,9 @@ const OriginalComponent = ({ json, sentence, active, toggleActive, toggleAligned
 
   return (
     <div>
-      <p>
-        {words.map(({ $: { n, id }, text }, ii) => (
-          renderText(n, id, text, toggleActive, toggleAligned, ii, sentence, active)
-        ))}
-      </p>
+      {words.map(({ $: { n, id }, text }, ii) => (
+        renderText(n, id, text, toggleActive, toggleAligned, ii, sentence, active)
+      ))}
     </div>
   );
 };

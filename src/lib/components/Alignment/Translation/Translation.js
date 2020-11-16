@@ -26,12 +26,10 @@ const TranslationComponent = ({ json, aligned }) => {
   const words = json['aligned-text'].sentence[0].wds[1].w;
 
   return (
-    <div>
-      <p>
-        {words.map(({ $: { n }, text, refs }, ii) => (
-          renderText(n, text, refs, ii, aligned)
-        ))}
-      </p>
+    <div className={styles.container}>
+      {words.map(({ $: { n }, text, refs }, ii) => (
+        renderText(n, text, refs, ii, aligned)
+      ))}
     </div>
   );
 };

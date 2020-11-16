@@ -617,19 +617,28 @@ const App = () => {
       <Treebank treebank={xml}>
         <Sentence id="1">
           <Alignment alignment={alignment}>
-            <Original />
-            <Translation />
+            <div className={styles.row}>
+              <div className={styles.left}>
+                <Original />
+              </div>
+              <div className={styles.right}>
+                <Information field="gloss" />
+                <Information />
+                <Information field="notes" />
+                <Collapse title="Translation">
+                  <Translation />
+                </Collapse>
+                <Collapse title="Treebank">
+                  <div className={styles.graph}>
+                    <Graph />
+                  </div>
+                </Collapse>
+                <Collapse title="XML">
+                  <Xml />
+                </Collapse>
+              </div>
+            </div>
           </Alignment>
-          <Text />
-          <div className={styles.graph}>
-            <Graph />
-          </div>
-          <Information />
-          <Information field="gloss" />
-          <Information field="notes" />
-          <Collapse title="XML">
-            <Xml />
-          </Collapse>
         </Sentence>
       </Treebank>
     </div>
