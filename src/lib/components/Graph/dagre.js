@@ -98,10 +98,10 @@ const drawChangeActive = (state, selectedG, nodes, prevNodes, onClick) => {
     // eslint-disable-next-line no-underscore-dangle
     if (active && this.__data__ === active.id) {
       this.classList.add(styles.active);
-      d3.select(this).on('mousedown', ({ target }) => {
-        // eslint-disable-next-line no-underscore-dangle
-        onClick(target.__data__);
-      });
+      // d3.select(this).on('mousedown', ({ target }) => {
+      //   // eslint-disable-next-line no-underscore-dangle
+      //   onClick(target.__data__);
+      // });
     }
 
     // eslint-disable-next-line no-underscore-dangle

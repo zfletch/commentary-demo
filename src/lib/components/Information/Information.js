@@ -1,5 +1,5 @@
 import React from 'react';
-import { object } from 'prop-types';
+import { object, string } from 'prop-types';
 
 import { wordType } from '../../types';
 
@@ -17,22 +17,42 @@ const renderLemma = (lemma) => (
 const renderPostag = ([name, value]) => (
   <div key={name} className={styles.container}>
     <dt className={styles.dt}>{name}</dt>
+    <dd className={styles.postag}>{value}</dd>
+  </div>
+);
+
+const renderData = (name, value) => (
+  <div key={name} className={styles.container}>
+    <dt className={styles.dt}>{name}</dt>
     <dd className={styles.dd}>{value}</dd>
   </div>
 );
 
-const Information = ({ active, config }) => {
+const Information = ({ active, field, config }) => {
   if (active) {
-    const { $: { postag, lemma } } = active;
+    const { $ } = active;
+    if (field === 'postag') {
+      const { postag, lemma } = $;
 
-    return (
-      <div className={styles.information}>
-        <dl className={styles.dl}>
-          {renderLemma(lemma)}
-          {deconstructPostag(config, postag).map(renderPostag)}
-        </dl>
-      </div>
-    );
+      return (
+        <div className={styles.information}>
+          <dl className={styles.dl}>
+            {renderLemma(lemma)}
+            {deconstructPostag(config, postag).map(renderPostag)}
+          </dl>
+        </div>
+      );
+    }
+
+    if ($[field]) {
+      return (
+        <div className={styles.information}>
+          <dl className={styles.dl}>
+            {renderData(field, $[field])}
+          </dl>
+        </div>
+      );
+    }
   }
 
   return (
@@ -42,12 +62,14 @@ const Information = ({ active, config }) => {
 
 Information.propTypes = {
   active: wordType,
+  field: string,
   // eslint-disable-next-line react/forbid-prop-types
   config: object.isRequired,
 };
 
 Information.defaultProps = {
   active: null,
+  field: 'postag',
 };
 
 export default Information;

@@ -4,9 +4,9 @@ import SentenceContext from '../sentence-context';
 
 import Information from '../../Information';
 
-const InformationWithContext = () => (
+const InformationWithContext = ({ field }) => (
   <SentenceContext.Consumer>
-    {({ active, config }) => <Information active={active} config={config} />}
+    {({ active, config }) => <Information active={active} field={field} config={config} />}
   </SentenceContext.Consumer>
 );
 
